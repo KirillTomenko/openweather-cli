@@ -1,42 +1,46 @@
-@'
-# Environment variables - NEVER commit real keys!
+# Environment variables (never commit real keys)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# Python
+# Python bytecode / caches
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+.python-version
 
 # Virtual environments
 venv/
-ENV/
-env/
 .venv/
+env/
+ENV/
 
-# Cache and logs
+# Local app caches / data
+.cache/
 weather_cache.json
+User_Data.json
+
+# Test / coverage / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Build artifacts / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# Logs
 *.log
 
-# IDE
+# IDE / editor
 .idea/
 .vscode/
 *.swp
@@ -46,4 +50,3 @@ weather_cache.json
 # OS
 .DS_Store
 Thumbs.db
-'@ | Out-File -FilePath ".gitignore" -Encoding utf8
